@@ -1,5 +1,6 @@
 import 'package:flutter/material.dart';
 import 'package:provider/provider.dart';
+import 'package:qrscann_flutter/provider/db_provider.dart';
 import 'package:qrscann_flutter/provider/ui_state.dart';
 import 'package:qrscann_flutter/screens/directions_page.dart';
 import 'package:qrscann_flutter/screens/maps_history.dart';
@@ -45,6 +46,7 @@ class _HomePageBody extends StatelessWidget {
   Widget build(BuildContext context) {
     final uiProvider = Provider.of<UiProvider>(context);
     final currentIndex = uiProvider.selectedMenuOpt;
+    DBProvider.db.database;
     switch (currentIndex) {
       case 0:
         return const MapsHistory();
